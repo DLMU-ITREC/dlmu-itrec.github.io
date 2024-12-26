@@ -1,0 +1,105 @@
+/* Publication CSS */
+.publication-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.content-section ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+
+.publication-list li {
+    padding: 10px 0;
+}
+
+.publication-list .publicaiton-text {
+    font-size: 1.15em;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+
+.publication-list .publication-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.publication-list .publication-details {
+    margin-left: 20px;
+    font-size: 0.9em;
+}
+
+.publication-list .publication-details a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.publication-list .publication-details a:hover {
+    text-decoration: underline;
+}
+
+#2023,
+#2022,
+#Early {
+    padding: 5px;
+}
+
+.content-section h1 {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.content-section h2 {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.content-section h3 {
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 1.5rem;
+}
+
+
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--bs-gutter-y);
+    margin-bottom: var(--bs-gutter-y);
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x))
+}
+
+.featurette-divider {
+    margin: 2rem 0;
+    width: fit-content;
+}
