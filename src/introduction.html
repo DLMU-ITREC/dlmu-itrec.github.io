@@ -249,7 +249,7 @@
                 const researchAreas = values[10].split(';');
                 let researchHtml = '';
                 researchAreas.forEach(area => {
-                    researchHtml += `<strong>${area}</strong>`;
+                    researchHtml += `<strong> ${area} </strong>`;
                 });
                 $('.research-area').html(researchHtml);
             } else {
@@ -456,9 +456,6 @@
                                 <p class="fw-bold">邮箱: </p>
                             </div>
 
-                            <div class="profile-info">
-                                <strong></strong>
-                            </div>
                             <div class="profile-introduction">
                                 <p class="fw-bold">简介: </p>
                             </div>
