@@ -243,6 +243,18 @@
                 $('.achievement-section:eq(2)').hide();
                 $('.admission-list').empty(); // 清空列表内容
             }
+            if (values[10] && values[10].trim()) {
+                $('.achievement-section:eq(3)').show();
+                $('.subsection-title:eq(3)').text('研究方向');
+                const researchAreas = values[10].split(';');
+                let researchHtml = '';
+                researchAreas.forEach(area => {
+                    researchHtml += `<strong>${area}</strong>`;
+                });
+                $('.research-area').html(researchHtml);
+            } else {
+                $('.achievement-section:eq(3)').hide();
+            }
         }
     </script>
 
