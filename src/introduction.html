@@ -173,6 +173,8 @@
 
             // 更新论文列表
             if (values[7]) {
+                $('.achievement-section:eq(0)').show();
+                $('.subsection-title').first().text('学术成果');
                 const papers = values[7].split('|');
                 let paperHtml = '';
                 papers.forEach(paper => {
@@ -187,10 +189,13 @@
                        </li>`;
                 });
                 $('.publication-list').html(paperHtml);
+            } else {
+                $('.achievement-section:eq(0)').hide();
             }
-
             // 更新项目列表
             if (values[8]) {
+                $('.achievement-section:eq(1)').show();
+                $('.subsection-title:eq(1)').text('研究项目');
                 const projects = values[8].split(';');
                 let projectHtml = '';
                 projects.forEach(project => {
@@ -200,6 +205,43 @@
                        </li>`;
                 });
                 $('.project-list').html(projectHtml);
+            } else {
+                $('.achievement-section:eq(1)').hide();
+            }
+
+            if (values[9] && values[9].trim()) {
+                // 假设数据格式为: "081200,计算机科学与技术,1;083500,软件工程,1;085400,电子信息,1"
+                $('.achievement-section:eq(2)').show();
+                $('.subsection-title:eq(2)').text('招生信息');
+                const admissions = values[9].split(';');
+                let admissionHtml = `
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">专业代码</th>
+                    <th class="text-center">专业名称</th>
+                    <th class="text-center">招生人数</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
+                admissions.forEach(admission => {
+                    const [code, name, count] = admission.split('&');
+                    admissionHtml += `
+                <tr>
+                    <td class="text-center">${code}</td>
+                    <td class="text-center">${name}</td>
+                    <td class="text-center">${count}</td>
+                </tr>`;
+                });
+
+                admissionHtml += `
+            </tbody>
+        </table>`;
+                $('.admission-list').html(admissionHtml);
+            } else {
+                $('.achievement-section:eq(2)').hide();
+                $('.admission-list').empty(); // 清空列表内容
             }
         }
     </script>
@@ -399,51 +441,59 @@
                             <h1 class="profile-name"></h1>
                             <div class="profile-description"></div>
                             <div class="profile-info">
-                                <strong>邮箱:</strong>
+                                <strong>邮箱: </strong>
                             </div>
 
                             <div class="profile-info">
                                 <strong></strong>
                             </div>
-                            <div class="social-icons">
-                                <a href="#" title="Website"><i class="fas fa-link"></i></a>
-                                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                            <div class="profile-introduction">
+                                <p class="fw-bold">简介: </p>
                             </div>
+                            <div class="social-icons">
+                                <p class="fw-bold">相关链接:
+                                    <a href="#" title="Website" style="margin-left: 10px;"><i
+                                            class="fas fa-link ml-2"></i></a>
+                                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                </p>
+                            </div>
+
                         </div>
 
                         <!-- 下半部分 - 学术成果 -->
                         <div class="profile-achievements">
-                            <h2 class="section-title">学术成果</h2>
+                            <h2 class="section-title fw-bold">个人信息</h2>
 
                             <!-- 论文发表 -->
                             <div class="achievement-section mb-4">
-                                <h3 class="subsection-title">发表论文</h3>
+                                <h3 class="subsection-title fw-bold"></h3>
                                 <ul class="publication-list">
                                     <li class="publication-item">
-                                        <strong>Paper Title 1</strong><br>
-                                        Authors, Conference/Journal Name, Year
+                                        <strong></strong><br>
                                     </li>
                                     <li class="publication-item">
-                                        <strong>Paper Title 2</strong><br>
-                                        Authors, Conference/Journal Name, Year
+                                        <strong></strong><br>
                                     </li>
                                 </ul>
                             </div>
 
                             <!-- 研究项目 -->
                             <div class="achievement-section mb-4">
-                                <h3 class="subsection-title">研究项目</h3>
+                                <h3 class="subsection-title fw-bold"></h3>
                                 <ul class="project-list">
                                     <li class="project-item">
-                                        <strong>Project Name 1</strong><br>
-                                        Brief description of the project
+                                        <strong></strong><br>
                                     </li>
                                     <li class="project-item">
-                                        <strong>Project Name 2</strong><br>
-                                        Brief description of the project
+                                        <strong></strong><br>
                                     </li>
                                 </ul>
+                            </div>
+                            <!-- 招生信息 -->
+                            <div class="achievement-section mb-4">
+                                <h3 class="subsection-title fw-bold"></h3>
+                                <div class="admission-list"></div>
                             </div>
                         </div>
                     </div>
