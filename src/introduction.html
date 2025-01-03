@@ -121,6 +121,57 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script>
+        // CSV 解析函数
+        function parseCSV(str) {
+            const arr = [];
+            let quote = false;  // 是否在引号内
+            let row = [];
+            let cell = '';
+
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                const nextChar = str[i + 1];
+
+                if (quote) {
+                    if (char === '"') {
+                        if (nextChar === '"') {
+                            cell += '"';
+                            i++;
+                        } else {
+                            quote = false;
+                        }
+                    } else {
+                        cell += char;
+                    }
+                } else {
+                    if (char === '"') {
+                        quote = true;
+                    } else if (char === ',') {
+                        row.push(cell.trim());
+                        cell = '';
+                    } else if (char === '\n' || char === '\r') {
+                        if (nextChar === '\n') {
+                            i++;
+                        }
+                        row.push(cell.trim());
+                        arr.push(row);
+                        row = [];
+                        cell = '';
+                    } else {
+                        cell += char;
+                    }
+                }
+            }
+
+            if (cell) {
+                row.push(cell.trim());
+            }
+            if (row.length) {
+                arr.push(row);
+            }
+
+            return arr;
+        }
         $(document).ready(function () {
             // 获取URL参数
             const urlParams = new URLSearchParams(window.location.search);
@@ -133,12 +184,11 @@
                     dataType: 'text',
                     success: function (data) {
                         // 解析 CSV 数据
-                        const rows = data.split('\n');
-                        const headers = rows[0].split(',');
-
+                        const rows = parseCSV(data);
+                        const headers = rows[0];
                         // 查找对应的人员信息
                         for (let i = 1; i < rows.length; i++) {
-                            const values = rows[i].split(',');
+                            const values = rows[i];
                             if (values[0] === personId) { // 假设第一列是ID
                                 // 更新页面信息
                                 updateProfile(headers, values);
@@ -182,18 +232,47 @@
             if (values[7]) {
                 $('.achievement-section:eq(0)').show();
                 $('.subsection-title').first().text('学术成果');
-                const papers = values[7].split('|');
+                const cleanValue = values[7].replace(/['"]/g, '');
+                const papers = cleanValue.split('|');
                 let paperHtml = '';
                 papers.forEach(paper => {
-                    const [content, link] = paper.split('&');
-                    const [title, journal] = content.split(';');
-                    paperHtml += `
-                       <li class="publication-item">
-                           <a href="${link}" target="_blank" class="nav-link">
-                            <strong>${title}</strong>
-                            <em>${journal}</em>
-                           </a>
-                       </li>`;
+                    // 首先判断是否有链接
+                    if (paper.includes('&')) {
+                        const [content, link] = paper.split('&');
+                        // 再判断是否有journal信息
+                        if (content.includes(';')) {
+                            const [title, journal] = content.split(';');
+                            paperHtml += `
+                   <li class="publication-item">
+                       <a href="${link}" target="_blank" class="nav-link">
+                        <strong>${title}</strong>
+                        <em>${journal}</em>
+                       </a>
+                   </li>`;
+                        } else {
+                            paperHtml += `
+                   <li class="publication-item">
+                       <a href="${link}" target="_blank" class="nav-link">
+                        <strong>${content}</strong>
+                       </a>
+                   </li>`;
+                        }
+                    } else {
+                        // 如果没有链接,直接显示内容
+                        if (paper.includes(';')) {
+                            const [title, journal] = paper.split(';');
+                            paperHtml += `
+                   <li class="publication-item">
+                       <strong>${title}</strong>
+                       <em>${journal}</em>
+                   </li>`;
+                        } else {
+                            paperHtml += `
+                   <li class="publication-item">
+                       <strong>${paper}</strong>
+                   </li>`;
+                        }
+                    }
                 });
                 $('.publication-list').html(paperHtml);
             } else {
@@ -264,8 +343,7 @@
             }
         }
     </script>
-
-
+    
     <!-- SVG 图标 -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check2" viewBox="0 0 16 16"></symbol>
