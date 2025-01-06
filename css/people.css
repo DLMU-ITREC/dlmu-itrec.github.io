@@ -1,0 +1,35 @@
+.section {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .section-heading {
+    font-weight: bold;
+}
+
+.section .section-subtitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--bs-gutter-y);
+    margin-bottom: var(--bs-gutter-y);
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x))
+}
+
+.featurette-divider {
+    margin: 2rem 0;
+    width: fit-content;
+}

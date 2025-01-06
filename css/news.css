@@ -1,0 +1,127 @@
+.section {
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .section-heading {
+    font-weight: bold;
+}
+
+.content-section h1 {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.content-section li {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin: 1.2rem;
+}
+
+.text-element {
+    font-size: bold;
+}
+
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    margin-bottom: var(--bs-gutter-y);
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x))
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.featurette-divider {
+    margin: 2rem 0;
+    width: fit-content;
+}
+
+
+/* 新闻样式 */
+.news-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+.news-item:last-child {
+    border-bottom: none;
+}
+.news-item a {
+    color: inherit;
+}
+.news-item:hover {
+    background-color: #f8f9fa;
+}
+.news-item h5 {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news-date {
+    white-space: nowrap;
+    color: #6c757d;
+}
+
+/* 分页样式优化 */
+.pagination {
+    margin-top: 20px;
+    gap: 5px;
+}
+.pagination .page-item .page-link {
+    border-radius: 4px;
+    border: none;
+    padding: 8px 16px;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+.pagination .page-item .page-link:hover:not([disabled]) {
+    background-color: #e9ecef;
+    color: #495057;
+}
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+    outline: none;
+}
+.pagination .page-item .page-link[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+#pageInfo {
+    min-width: 120px;
+    text-align: center;
+    background-color: white !important;
+    cursor: default;
+}
+#pageInfo:hover {
+    background-color: white !important;
+}
+#prevPage, #nextPage {
+    font-weight: bold;
+}

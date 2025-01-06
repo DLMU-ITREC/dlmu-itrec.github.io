@@ -1,0 +1,63 @@
+.section {
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .section-heading {
+    font-weight: bold;
+}
+
+.content-section h1 {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.content-section li {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin: 1.2rem;
+}
+
+.text-element {
+    font-size: bold;
+}
+
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    margin-bottom: var(--bs-gutter-y);
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x))
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.featurette-divider {
+    margin: 2rem 0;
+    width: fit-content;
+}
