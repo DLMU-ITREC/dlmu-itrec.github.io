@@ -14,12 +14,12 @@ $(document).ready(function() {
                 // 添加新闻条目
                 latestNews.forEach(item => {
                     const newsItem = `
-                        <a href="${item.link || '#'}" class="list-group-item list-group-item-action d-flex gap-3 py-3" target="_blank">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 text-truncate" style="max-width: 600px;">${item.title}</h6>
+                        <a href="${item.link || '#'}" class="list-group-item list-group-item-action py-3" target="_blank">
+                            <div class="d-flex w-100 justify-content-between flex-nowrap">
+                                <div class="me-3" style="flex: 1; min-width: 0;">
+                                    <h6 class="mb-0 text-truncate">${item.title}</h6>
                                 </div>
-                                <small class="opacity-50 text-nowrap">${item.date}</small>
+                                <small class="opacity-50 text-nowrap d-none d-sm-block">${item.date}</small>
                             </div>
                         </a>
                     `;
