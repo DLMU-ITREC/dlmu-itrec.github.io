@@ -183,6 +183,26 @@
     --bs-form-invalid-border-color: #ea868f
 }
 
+[data-bs-theme=dark] .container.marketing {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme=dark] .container.marketing .featurette-heading {
+    color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme=dark] .container.marketing .lead {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme=dark] .container.marketing a {
+    color: var(--bs-link-color);
+}
+
+[data-bs-theme=dark] .container.marketing a:hover {
+    color: var(--bs-link-hover-color);
+}
+
 *,
 ::after,
 ::before {
