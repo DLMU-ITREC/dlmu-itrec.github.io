@@ -11,12 +11,12 @@
       return storedTheme
     }
 
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light'
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
   }
 
   const setTheme = theme => {
     if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark' ))
     } else {
       document.documentElement.setAttribute('data-bs-theme', theme)
     }
@@ -89,22 +89,3 @@ document.addEventListener('click', function (e) {
     e.target.children[0].classList.toggle('active');
   }
 })
-
-
-// 导航栏透明效果
-// document.addEventListener("DOMContentLoaded", function() {
-//   var navbar = document.querySelector('.navbar');
-  
-//   window.onscroll = function() {
-//     // 当滚动超过100px时改变导航栏样式
-//     if (window.scrollY > 100) {
-//       navbar.classList.remove('bg-transparent');
-//       navbar.classList.add('bg-light');
-//       navbar.classList.add('navbar-scrolled');
-//     } else {
-//       navbar.classList.add('bg-transparent');
-//       navbar.classList.remove('bg-light');
-//       navbar.classList.remove('navbar-scrolled');
-//     }
-//   };
-// });
