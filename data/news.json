@@ -1,5 +1,10 @@
 [
     {
+        "title": "大连海事大学智能技术研究中心（DLMU-ITREC）官网正式开放",
+        "date": "2025-01-26",
+        "link": "https://mp.weixin.qq.com/s/czOvs6PDe4gOWfvxJTfoIA"
+    },
+    {
         "title": "团队承办CCL2025技术评测子任务：第一届面向中文语音的实体关系三元组抽取评测",
         "date": "2025-01-16",
         "link": "https://mp.weixin.qq.com/s/fl4nTUeh6aazEJsjLNzTjg"
@@ -15,11 +20,6 @@
         "link": "https://mp.weixin.qq.com/s/rR0QDnjqAb1kxXzLcnIL1w"
     },
     {
-        "title": "大连海事大学智能技术研究中心（DLMU-ITREC）官网正式开放",
-        "date": "2025-01-06",
-        "link": "https://mp.weixin.qq.com/s/GDTO4O0ozjIxwrhrHYGozw?token=475564872&lang=zh_CN"
-    },
-    {
         "title": "博士生侯晓迪关于医学报告生成的研究成果被 ESWA 期刊录用",
         "date": "2025-01-03",
         "link": "https://mp.weixin.qq.com/s/q5SEYt1h4-T75EXr3Qhj1w"
@@ -28,6 +28,16 @@
         "title": "博士生王世龙关于蛋白质复合物识别的研究成果被 Briefings In Bioinformatics 期刊录用",
         "date": "2024-12-28",
         "link": "https://mp.weixin.qq.com/s/2M7gomDvDV2F2UZ0LWPQWg"
+    },
+    {
+        "title": "博士生王新刚关于多模态情感计算的研究成果被 MMAsia 2024 录用",
+        "date": "2024-12-28",
+        "link": "https://mp.weixin.qq.com/s/oCKbwqXuaGUqWnB1tRMGGw"
+    },
+    {
+        "title": "硕士生李洢丞关于联邦学习的研究成果被 ADMA2024 录用",
+        "date": "2024-12-13",
+        "link": "https://mp.weixin.qq.com/s/yjXjT_tsKZMrTitkHJe9GQ"
     },
     {
         "title": "潘怡霖老师在 ACM MM Asia 2024 亚洲多媒体会议组织论坛并做报告",
@@ -45,9 +55,29 @@
         "link": "https://mp.weixin.qq.com/s/uK1XWPD_ev258qWXeHuguw"
     },
     {
+        "title": "硕士生张凯玉关于推荐系统领域的研究成果被 ESWA 期刊录用",
+        "date": "2024-10-31",
+        "link": "https://mp.weixin.qq.com/s/4_eYF-D4DbVaNBmBUWJSzw"
+    },
+    {
+        "title": "硕士生郎王钰关于放射学报告自动生成的研究成果被 MIA 期刊录用",
+        "date": "2024-10-16",
+        "link": "https://mp.weixin.qq.com/s/oKDnQTcDWkf3kfeRB78XfQ"
+    },
+    {
+        "title": "硕士生孟凡珺关于药物推荐领域的研究成果被 Bioinformatics 期刊录用",
+        "date": "2024-09-24",
+        "link": "https://mp.weixin.qq.com/s/xNvlv0wgdaDZq9DEa3wQfA"
+    },
+    {
         "title": "硕士生袁建园关于生物医学信息抽取的研究成果被 Bioinformatics 期刊录用",
         "date": "2024-09-13",
         "link": "https://mp.weixin.qq.com/s/Q3HTwAIlPKJPJrU3kknavg"
+    },
+    {
+        "title": "博士生王思淼关于红外-可见光车辆检测的研究成果被 TGRS 期刊录用",
+        "date": "2024-08-30",
+        "link": "https://mp.weixin.qq.com/s/66sH3zS8yW682PdryC_I4A"
     },
     {
         "title": "硕士生张富玺关于智能问诊的研究成果被 EAAI 期刊录用",
@@ -55,9 +85,19 @@
         "link": "https://mp.weixin.qq.com/s/DlSO1xD_acOoP-Cjfge-QA"
     },
     {
+        "title": "硕士生程俊凯关于药物知识发现的研究成果被 JBHI 期刊录用",
+        "date": "2024-05-14",
+        "link": "https://mp.weixin.qq.com/s/P3J8i4EP8_N1Zh8h8HkNXg"
+    },
+    {
         "title": "硕士生刘贯通关于多目标立场检测的研究成果被 EAAI 期刊录用",
         "date": "2024-04-24",
         "link": "https://mp.weixin.qq.com/s/cCJnSMKpny0kPvmLSrwdEw"
+    },
+    {
+        "title": "博士后刘宇男关于稳健人体解析的研究成果被 TPAMI 期刊录用",
+        "date": "2024-09-13",
+        "link": "https://mp.weixin.qq.com/s/zBqpI_6CHbLKX7kWRz8GGQ"
     },
     {
         "title": "博士生王思淼关于人体图像超分辨率的研究成果被 PR 期刊录用",
